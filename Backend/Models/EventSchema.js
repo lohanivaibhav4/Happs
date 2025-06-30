@@ -1,13 +1,13 @@
 import mongoose from 'mongoose'
-import UserSchema from './UserSchema'
+import User from './UserSchema.js'
 
 const scheduleSchema = new mongoose.Schema({
     startDate:{
-        type:Date(),
+        type: Date,
         required:true
     },
     endDate:{
-        type:Date()
+        type: Date
     }
 })
 
@@ -38,7 +38,7 @@ const eventSchema = new mongoose.Schema({
     organizedBy:String,
     postedBy:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:UserSchema,
+        ref:User,
         required:true
     },
     perks:[String],
@@ -46,7 +46,20 @@ const eventSchema = new mongoose.Schema({
         type:Boolean,
         required:true
     },
-    registrationLink:String
+    registrationLink:String,
+    createdAt: {
+        type:Date,
+        default: Date.now()
+    },
+    status:{
+        type:String,
+        enum:['Upcoming', 'Ongoing', 'Postponed', 'Cancelled', 'Completed'],
+        default:'Upcoming'
+    },
+    peopleIntrested: {
+        type:Number, 
+        default: 0
+    }
 
 })
 
