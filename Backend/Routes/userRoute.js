@@ -5,10 +5,12 @@ const router = express.Router()
 //! REGISTER USER
 router.post('/register',async (req, res)=>{
     const { name, email, password } = req.body
-    const user = await User.findOne({email})
-    if(user.email == email){
+    const user = await User.findOne({email})  
+    
+    if(user?.email == email){
         return res.status(409).json({message:"User Already Exists!"})
     }
+    
     const newUser = new User({
         name,
         email, 
