@@ -29,11 +29,10 @@ router.post("/create", async (req, res)=>{
         registrationRequired,
         registrationLink,
     } = req.body
-    
 
     //! CHECK IF EVENT EXISTS
     const event = await Events.findOne({location})
-    if(event?.location == location || event.schedule.startDate == schedule.startDate){
+    if(event?.location == location && event?.schedule.startDate == schedule.startDate){
         return res.status(409).json({message:"Possible Duplicate Event Or A Group Event!"})
     }
 

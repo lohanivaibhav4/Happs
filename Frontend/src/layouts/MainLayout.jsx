@@ -8,7 +8,7 @@ export default function MainLayout(){
                     <NavLink to='/'><h1>Happs</h1></NavLink>
                     <div>
                         <NavLink to='about'>About</NavLink>
-                        <NavLink to='login'>Login</NavLink>
+                        <NavLink to='login' className="login-btn">Login</NavLink>
                     </div>
                 </nav>
             </header>
