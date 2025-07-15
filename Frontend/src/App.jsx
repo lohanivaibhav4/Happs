@@ -4,6 +4,8 @@ import Homepage from "./components/Homepage"
 import MainLayout from "./layouts/MainLayout"
 import About from "./components/About"
 import Events from "./components/Events"
+import Login from "./components/Login"
+import Register from "./components/Register"
 
 function App() {
   
@@ -15,6 +17,9 @@ function App() {
         <Route index element={<Homepage />} />
         <Route path="about" element={<About />} />
         <Route path="events" element={<Events />} />
+        <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />}/>
+
       </Route>
     </Routes>
     </BrowserRouter>

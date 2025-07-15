@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
+import { FaRegCopyright } from "react-icons/fa6";
 
 export default function MainLayout(){
     return(
@@ -14,7 +15,7 @@ export default function MainLayout(){
             </header>
             <Outlet />
             <footer>
-                <p>Designed & Developed By <span>Vaibhav Lohani</span></p>
+                <p><FaRegCopyright /> {new Date().getFullYear()} Happs</p>
             </footer>
         </>
     )
