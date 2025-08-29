@@ -41,8 +41,14 @@ const eventSchema = new Schema({
     perks:{
         type:[String],
         default:[]
+    },
+    peopleInterested:{
+        type:Number,
+        default:0
+    },
+    organizedBy:{
+        type:String
     }
-    //ORGANIZED_BY
 
 },{ timestamps:true })
 
