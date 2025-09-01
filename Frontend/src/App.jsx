@@ -1,8 +1,18 @@
+import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Homepage from './components/Homepage'
+
 function App() {
 
   return (
     <>
-      <h1>Happs - Event Management And Listing Application</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />} >
+            <Route index element={<Homepage />} />
+          </ Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
